@@ -1,0 +1,31 @@
+{% load compress %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <title>{% block site_name %}SITE NAME{% endblock %}</title>
+    {% block fonts %}{% endblock %}
+    {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/screen.sass" />
+    {% endcompress %}
+    {% block stylesheets %}{% endblock %}
+    {% block extra_styles %}{% endblock %}
+    {% compress js %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.js"></script>
+    {% block scripts %}{% endblock %}
+    {% block extra_scripts %}{% endblock %}
+    {% endcompress %}
+</head>
+
+<body>
+    {% block body %}
+    <div id="wrapper">
+        <div id="header">{% block header %}<h1>aotp.</h1>{% endblock %}</div>
+        {% block main %}
+        <div id="content">{% block content %}{% endblock %}</div>
+        {% endblock %}
+        <div id="footer">{% block footer %}{% endblock %}</div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
