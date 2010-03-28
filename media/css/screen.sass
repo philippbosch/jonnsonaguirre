@@ -17,6 +17,10 @@
 body
     margin = !header_height !side_margins
     overflow-y: scroll
+    
+    &.mceContentBody
+        margin: 12px
+        overflow-y: auto
 
 #wrapper
     width: 880px
@@ -59,10 +63,6 @@ a
         color = !highlight_color
         text-shadow: none
 
-#left
-    // background: #f6f6f6
-    // -webkit-box-shadow: 1px 1px 2px #e5e5e5
-
 
 
 // TYPOGRAPHY //
@@ -70,7 +70,7 @@ a
 body
     font-family: "museo-sans-1", "museo-sans-2", "Helvetica Neue", Arial, Helvetica, sans-serif
     font-size: 100%
-    font-weight: 300
+    font-weight: normal
 
 a
     text-decoration: none
@@ -79,7 +79,7 @@ strong
     font-weight: 700
 
 #left
-    text-shadow: 0px 1px 0 #BBB
+    // text-shadow: 0px 1px 0 #BBB
 
 h1
     font-size: 150%
@@ -89,9 +89,11 @@ h2
     color: #000
 
 h3
-    font-size: 80%
+    font-size: 90%
 
-#content
+#content, .mceContentBody
+    font-size: 80%
+    
     p, ul, ol, dl
         margin: 1.3em 0
         line-height = !line_height
@@ -120,12 +122,11 @@ h3
 .title
     margin-bottom = !line_height+em
 
-.work-mediafile
-    margin = !line_height+em 0
+#content .work-mediafile
+    margin = !line_height+em 0 !line_height*2+em 0
     
-    .caption
-        margin-top = !line_height/3+em
-        font-size: 80%
+    .caption p
+        margin-top = !line_height/2+em
 
 .issuu-publication
     width: 100%

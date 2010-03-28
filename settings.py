@@ -81,6 +81,7 @@ INSTALLED_APPS = (
     'compressor',
     'reversion',
     'sorl.thumbnail',
+    'tinymce',
     
     'cms',
     'cms.plugins.text',
@@ -187,6 +188,24 @@ CMS_URL_OVERWRITE = False
 CMS_REDIRECTS = False
 CMS_SEO_FIELDS = False
 CMS_SOFTROOT = False
+
+
+
+# TINYMCE
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "paste",
+    'theme': "advanced",
+    'custom_shortcuts': False,
+    'object_resizing': False,
+    'theme_advanced_blockformats': "p,h2,h3",
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_toolbar_align': "left",
+    'theme_advanced_buttons1': "bold,underline,separator,justifyleft,justifycenter,justifyright,justifyblock,separator,bullist,numlist,separator,undo,redo,separator,formatselect,removeformat,cleanup,separator,link,unlink,separator,code",
+    'theme_advanced_buttons2': "",
+    'theme_advanced_buttons3': "",
+    'content_css': MEDIA_URL + 'css/screen.css',
+}
 
 
 

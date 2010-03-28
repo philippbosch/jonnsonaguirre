@@ -7,12 +7,12 @@
         {% if work.date %}<h3>{{ work.date }}</h3>{% endif %}
     </div>
     
-    {% if work.text %}{{ work.text|linebreaks }}{% endif %}
+    {% if work.text %}{{ work.text|safe }}{% endif %}
     
     {% for file in work.mediafile_set.all %}
         <div class="work-mediafile">
             <img src="{% thumbnail file.file 640x960 upscale detail %}" alt="{{ file.name }}" />
-            {% if file.caption %}<div class="caption">{{ file.caption }}</div>{% endif %}
+            {% if file.caption %}<div class="caption">{{ file.caption|safe }}</div>{% endif %}
         </div>
     {% endfor %}
 {% endblock %}

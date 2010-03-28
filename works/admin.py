@@ -4,7 +4,7 @@ from jonnsonaguirre.works.models import Work, MediaFile
 
 
 
-class MediaFileInline(admin.TabularInline):
+class MediaFileInline(admin.StackedInline):
     model = MediaFile
     exclude = ('name',)
 
