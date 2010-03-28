@@ -4,6 +4,11 @@ from django.utils.translation import ugettext_lazy as _
 from cms.models import CMSPlugin
 from tinymce import models as tinymce_models
 
+from south.modelsinspector import add_introspection_rules
+add_introspection_rules([], ["^tinymce\.models\.HTMLField"])
+
+
+
 class Work(models.Model):
     name = models.CharField(verbose_name=_("name"), max_length=255)
     slug = models.SlugField(verbose_name=_("slug"))
