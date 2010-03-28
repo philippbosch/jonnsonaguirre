@@ -1,0 +1,138 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+*:focus {
+  outline: 0; }
+
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: "" ""; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: ""; }
+
+a img {
+  border: none; }
+
+body {
+  margin: 128px 48px;
+  overflow-y: scroll; }
+
+#wrapper {
+  width: 880px;
+  margin: 0 auto;
+  position: relative; }
+
+#left {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0; }
+  #left h1 {
+    position: absolute;
+    top: 64px; }
+  #left #navigation {
+    margin-top: 128px; }
+
+#content {
+  margin-left: 240px; }
+
+#navigation ul {
+  margin-bottom: 1.3em; }
+
+html, body {
+  background: white;
+  color: #777777; }
+
+a {
+  color: #444444; }
+  a:hover {
+    color: #61d000;
+    text-shadow: none; }
+
+
+body {
+  font-family: "museo-sans-1", "museo-sans-2", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  font-weight: 300; }
+
+a {
+  text-decoration: none; }
+
+strong {
+  font-weight: 700; }
+
+#left {
+  text-shadow: 0px 1px 0 #BBB; }
+
+h1 {
+  font-size: 150%; }
+
+h2 {
+  font-size: 125%;
+  color: #000; }
+
+h3 {
+  font-size: 80%; }
+
+#content p, #content ul, #content ol, #content dl {
+  margin: 1.3em 0;
+  line-height: 1.3; }
+
+#navigation {
+  line-height: 1.3; }
+
+.selected a, .home h1 a {
+  color: #61d000;
+  text-shadow: none; }
+
+.work-plugin {
+  display: block;
+  float: left;
+  line-height: 0;
+  margin: 0 5px 5px 0; }
+
+.title {
+  margin-bottom: 1.3em; }
+
+.work-mediafile {
+  margin: 1.3em 0; }
+  .work-mediafile .caption {
+    margin-top: 0.433em;
+    font-size: 80%; }
+
+.issuu-publication {
+  width: 100%;
+  height: 400px; }

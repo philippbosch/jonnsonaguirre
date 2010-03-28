@@ -1,3 +1,132 @@
 @import _reset
 
 +global-reset
+
+!side_margins = 48px
+!header_height = 128px
+!background_color = #FFF
+!text_color = #777
+!link_color = #444
+!highlight_color = #61D000
+!line_height = 1.3
+
+
+
+// LAYOUT //
+
+body
+    margin = !header_height !side_margins
+    overflow-y: scroll
+
+#wrapper
+    width: 880px
+    margin: 0 auto
+    position: relative
+
+#left
+    width: 200px
+    height: 100%
+    position: fixed
+    top: 0
+    // margin-left: -1000px
+    // padding-left: 1000px
+    
+    h1
+        position: absolute
+        top = !header_height/2
+    
+    #navigation
+        margin-top = !header_height
+
+#content
+    margin-left: 240px
+
+#navigation
+    ul
+        margin-bottom = !line_height+em
+
+
+// COLORS, FX //
+
+html, body
+    background = !background_color
+    color = !text_color
+
+a
+    color = !link_color
+    
+    &:hover
+        color = !highlight_color
+        text-shadow: none
+
+#left
+    // background: #f6f6f6
+    // -webkit-box-shadow: 1px 1px 2px #e5e5e5
+
+
+
+// TYPOGRAPHY //
+
+body
+    font-family: "museo-sans-1", "museo-sans-2", "Helvetica Neue", Arial, Helvetica, sans-serif
+    font-size: 100%
+    font-weight: 300
+
+a
+    text-decoration: none
+
+strong
+    font-weight: 700
+
+#left
+    text-shadow: 0px 1px 0 #BBB
+
+h1
+    font-size: 150%
+
+h2
+    font-size: 125%
+    color: #000
+
+h3
+    font-size: 80%
+
+#content
+    p, ul, ol, dl
+        margin: 1.3em 0
+        line-height = !line_height
+
+
+
+// NAVIGATION //
+
+#navigation
+    line-height = !line_height
+
+.selected a, .home h1 a
+    color = !highlight_color
+    text-shadow: none
+
+
+
+// WORKS //
+
+.work-plugin
+    display: block
+    float: left
+    line-height: 0
+    margin: 0 5px 5px 0
+
+.title
+    margin-bottom = !line_height+em
+
+.work-mediafile
+    margin = !line_height+em 0
+    
+    .caption
+        margin-top = !line_height/3+em
+        font-size: 80%
+
+.issuu-publication
+    width: 100%
+    height: 400px

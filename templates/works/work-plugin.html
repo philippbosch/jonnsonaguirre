@@ -1,0 +1,1 @@
+{% load thumbnail %}<a href="work-{{ work.slug }}/" class="work-plugin" title="{{ work.name }}{% if work.date %} ({{ work.date }}){% endif %}"><img src="{% thumbnail work.display_image 480x120 %}" alt="{{ work.name }}"/></a>

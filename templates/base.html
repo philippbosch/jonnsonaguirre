@@ -1,8 +1,8 @@
-{% load compress %}<!doctype html>
+{% load compress cache cms_tags menu_tags %}<!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
 
 <head>
-    <title>{% block site_name %}SITE NAME{% endblock %}</title>
+    <title>{% block site_name %}JonnsonAguirre{% endblock %}</title>
     {% block fonts %}{% endblock %}
     {% compress css %}
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/screen.sass" />
@@ -14,14 +14,27 @@
     {% block scripts %}{% endblock %}
     {% block extra_scripts %}{% endblock %}
     {% endcompress %}
+    <script type="text/javascript" src="http://use.typekit.com/vrc2grx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="icon" href="{{ MEDIA_URL }}favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/vnd.microsoft.icon" />
 </head>
 
-<body>
+<body class="{{ current_page.get_slug }}">
     {% block body %}
     <div id="wrapper">
-        <div id="header">{% block header %}<h1>aotp.</h1>{% endblock %}</div>
+        <div id="left">
+            {% block header %}<h1><a href="/">JonnsonAguirre</a></h1>{% endblock %}
+            {% block navigation %}
+            <ul id="navigation">
+                {% show_menu 0 1 1 1 %}
+            </ul>
+            {% endblock %}
+        </div>
         {% block main %}
-        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
         {% endblock %}
         <div id="footer">{% block footer %}{% endblock %}</div>
     </div>

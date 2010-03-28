@@ -49,9 +49,9 @@ DATABASE_PORT = ''
 # I18N
 
 TIME_ZONE = 'Europe/Berlin'
-LANGUAGE_CODE = 'de'
+LANGUAGE_CODE = 'en'
 LANGUAGES = (
-    ('de', 'Deutsch'),
+    ('en', 'English'),
 )
 USE_I18N = True
 
@@ -76,8 +76,22 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
+    # 'django.contrib.csrf',
     'south',
     'compressor',
+    'reversion',
+    'sorl.thumbnail',
+    
+    'cms',
+    'cms.plugins.text',
+    'cms.plugins.picture',
+    'cms.plugins.link',
+    'cms.plugins.file',
+    'menus',
+    'mptt',
+    'publisher',
+    
+    'works',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,6 +99,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.csrf.CsrfMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -93,6 +110,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
+    'cms.context_processors.media',
+    'image_filer.context_processors.media',
 )
 
 
@@ -152,6 +171,30 @@ COMPILER_FORMATS = {
     }
 }
 COMPRESS_OUTPUT_DIR = 'compressed'
+
+
+
+# DJANGO-CMS
+
+CMS_TEMPLATES = (
+        ('default.html', _('default')),
+)
+CMS_TEMPLATE_INHERITANCE = False
+CMS_PERMISSION = False
+CMS_MODERATOR = False
+CMS_SHOW_START_DATE = False
+CMS_SHOW_END_DATE = False
+CMS_URL_OVERWRITE = False
+CMS_REDIRECTS = False
+CMS_SEO_FIELDS = False
+CMS_SOFTROOT = False
+
+
+
+# ISSUU
+
+ISSUU_API_KEY = 'qmym5codqqfmyygnbke1l5ekesglow8b'
+ISSUU_API_SECRET = 'pngwenubvboo6nfeucfzly36z94st8wg'
 
 
 
