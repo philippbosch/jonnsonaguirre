@@ -91,7 +91,7 @@ INSTALLED_APPS = (
     'mptt',
     'publisher',
     
-    'works',
+    'jonnsonaguirre.works',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,7 +111,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'cms.context_processors.media',
-    'image_filer.context_processors.media',
 )
 
 
