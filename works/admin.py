@@ -4,9 +4,10 @@ from jonnsonaguirre.works.models import Work, MediaFile
 
 
 
-class MediaFileInline(admin.StackedInline):
+class MediaFileInline(admin.TabularInline):
     model = MediaFile
     exclude = ('name',)
+    order_field = 'order'
 
 class WorkAdmin(admin.ModelAdmin):
     list_display = ('name','date',)

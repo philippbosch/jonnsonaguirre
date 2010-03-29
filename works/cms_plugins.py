@@ -29,6 +29,9 @@ class CMSPublicationPlugin(CMSPluginBase):
     name = _("Publication")
     render_template = "works/publication-plugin.html"
     
+    class Media:
+        js = ('js/admin/issuu_widget.js',)
+    
     def render(self, context, instance, placeholder):
         context.update({
             'publication':instance,

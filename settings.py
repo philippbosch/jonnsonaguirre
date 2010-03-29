@@ -209,6 +209,12 @@ TINYMCE_DEFAULT_CONFIG = {
 
 
 
+# SORL THUMBNAIL
+
+THUMBNAIL_QUALITY = 75
+
+
+
 # ISSUU
 
 ISSUU_API_KEY = 'qmym5codqqfmyygnbke1l5ekesglow8b'

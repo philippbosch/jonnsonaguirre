@@ -30,10 +30,12 @@ class MediaFile(models.Model):
     name = models.CharField(verbose_name=_("name"), max_length=255, blank=True)
     file = models.FileField(verbose_name=_("file"), upload_to='uploads/')
     caption = tinymce_models.HTMLField(verbose_name=_("caption"), blank=True)
+    order = models.PositiveSmallIntegerField(verbose_name=_("order"), default=0)
     
     class Meta:
         verbose_name=_("media file")
         verbose_name_plural=_("media files")
+        ordering = ('order',)
     
     def __unicode__(self):
         return u"%s" % self.name
