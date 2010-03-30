@@ -107,6 +107,12 @@ h2 {
 h3 {
   font-size: 90%; }
 
+.big {
+  font-size: 125%; }
+
+.small {
+  font-size: 85%; }
+
 #content, .mceContentBody {
   font-size: 85%; }
   #content p, #content ul, #content ol, #content dl, .mceContentBody p, .mceContentBody ul, .mceContentBody ol, .mceContentBody dl {
