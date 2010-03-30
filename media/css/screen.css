@@ -149,5 +149,7 @@ h3 {
 
 table h2 {
   margin: 1.3em 0 0.433em 0; }
+table td {
+  vertical-align: top; }
 table td:first-child {
   width: 60px; }
