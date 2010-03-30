@@ -115,7 +115,7 @@ h3 {
 
 #content, .mceContentBody {
   font-size: 85%; }
-  #content p, #content ul, #content ol, #content dl, .mceContentBody p, .mceContentBody ul, .mceContentBody ol, .mceContentBody dl {
+  #content p, #content ul, #content ol, #content dl, #content table, .mceContentBody p, .mceContentBody ul, .mceContentBody ol, .mceContentBody dl, .mceContentBody table {
     margin: 1.3em 0;
     line-height: 1.3; }
 
@@ -146,3 +146,8 @@ h3 {
 .issuu-publication {
   width: 100%;
   height: 400px; }
+
+table h2 {
+  margin: 1.3em 0 0.433em 0; }
+table td:first-child {
+  width: 60px; }
