@@ -11,7 +11,7 @@ add_introspection_rules([], ["^tinymce\.models\.HTMLField"])
 
 class Work(models.Model):
     name = models.CharField(verbose_name=_("name"), max_length=255)
-    slug = models.SlugField(verbose_name=_("slug"))
+    slug = models.SlugField(verbose_name=_("slug"), unique=True)
     text = tinymce_models.HTMLField(verbose_name=_("text"), blank=True)
     date = models.CharField(verbose_name=_("date"), max_length=50, blank=True)
     display_image = models.ImageField(verbose_name=_("display image"), upload_to='uploads/')
