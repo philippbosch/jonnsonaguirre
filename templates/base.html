@@ -7,6 +7,11 @@
     {% compress css %}
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/screen.sass" />
     {% endcompress %}
+    <!--[if lte IE 7]>
+    {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/screen.IE7.sass" />
+    {% endcompress %}
+    <![endif]-->
     {% block stylesheets %}{% endblock %}
     {% block extra_styles %}{% endblock %}
     {% compress js %}
