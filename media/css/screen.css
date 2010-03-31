@@ -142,7 +142,8 @@ h3 {
 
 .issuu-publication {
   width: 100%;
-  height: 400px; }
+  height: 400px;
+  margin-bottom: 32px; }
 
 table h2 {
   margin: 1.3em 0 0.433em 0; }
