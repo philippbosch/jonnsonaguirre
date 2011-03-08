@@ -136,6 +136,8 @@ CMS_URL_OVERWRITE = False
 CMS_REDIRECTS = False
 CMS_SEO_FIELDS = False
 CMS_SOFTROOT = False
+CMS_MEDIA_ROOT = os.path.join(PROJECT_ROOT, '..', 'static', 'cms')
+CMS_MEDIA_URL = STATIC_URL + 'cms/'
 
 # TINYMCE
 TINYMCE_DEFAULT_CONFIG = {
@@ -150,7 +152,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_buttons2': "",
     'theme_advanced_buttons3': "",
     'theme_advanced_styles': "Big=big;Small=small",
-    'content_css': MEDIA_URL + 'css/screen.css',
+    'content_css': STATIC_URL + 'css/screen.css',
 }
 
 # SORL THUMBNAIL
