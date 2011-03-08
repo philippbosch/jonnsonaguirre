@@ -24,12 +24,14 @@ ADMINS = (
 MANAGERS = ADMINS
 
 # DATABASE
-DATABASE_ENGINE = 'mysql'
-DATABASE_NAME = PROJECT_NAME
-DATABASE_USER = 'root'
-DATABASE_PASSWORD = ''
-DATABASE_HOST = ''
-DATABASE_PORT = ''
+DATABASES = {
+    'default': {
+        'ENGINE': 'mysql',
+        'NAME': PROJECT_NAME,
+        'USER': 'root',
+        'PASSWORD': '',
+    }
+}
 
 # I18N
 TIME_ZONE = 'Europe/Berlin'
