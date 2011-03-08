@@ -1,10 +1,10 @@
-http://www.djangoproject.com/download/1.2-beta-1/tarball/
+Django
 MySQL-python
 South
 PIL
 django-css
 BeautifulSoup
-django-cms==2.1.0.beta2
+django-cms
 django-reversion
-sorl-thumbnail
+easy_thumbnails
 -e svn+http://django-tinymce.googlecode.com/svn/trunk@98#egg=django_tinymce-trunk-py2.6-dev_r98

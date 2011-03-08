@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 _ = lambda s: s
 
 import os.path
@@ -7,36 +6,24 @@ import os.path
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 PROJECT_NAME = os.path.split(PROJECT_ROOT)[-1]
 
-
-
 # DEBUGGING
-
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1', )
 
-
-
 # CACHE
-
 CACHE_BACKEND = 'locmem://'
 CACHE_MIDDLEWARE_KEY_PREFIX = '%s_' % PROJECT_NAME
 CACHE_MIDDLEWARE_SECONDS = 600
 
-
-
 # EMAIL / ERROR NOTIFY
-
-SERVER_EMAIL = 'pb@philippbosch.de'
+SERVER_EMAIL = 'admin@pb.io'
 ADMINS = (
-    ('Philipp Bosch', 'philipp.bosch@me.com'),
+    ('Philipp Bosch', 'hello@pb.io'),
 )
 MANAGERS = ADMINS
 
-
-
 # DATABASE
-
 DATABASE_ENGINE = 'mysql'
 DATABASE_NAME = PROJECT_NAME
 DATABASE_USER = 'root'
@@ -44,10 +31,7 @@ DATABASE_PASSWORD = ''
 DATABASE_HOST = ''
 DATABASE_PORT = ''
 
-
-
 # I18N
-
 TIME_ZONE = 'Europe/Berlin'
 LANGUAGE_CODE = 'en'
 LANGUAGES = (
@@ -55,10 +39,7 @@ LANGUAGES = (
 )
 USE_I18N = True
 
-
-
 # URLS
-
 SITE_ID = 1
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
@@ -66,21 +47,17 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 ROOT_URLCONF = '%s.urls' % PROJECT_NAME
 # PREPEND_WWW = True
 
-
-
 # APPS, MIDDLEWARES, CONTEXT PROCESSORS
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    # 'django.contrib.csrf',
     'south',
     'compressor',
     'reversion',
-    'sorl.thumbnail',
+    'easy_thumbnails',
     'tinymce',
     
     'cms',
@@ -100,9 +77,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.media.PlaceholderMediaMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -114,10 +91,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'cms.context_processors.media',
 )
 
-
-
 # TEMPLATE LOADING
-
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
 )
@@ -127,42 +101,14 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.eggs.load_template_source',
 )
 
-
-
 # SECRET
-
-try:
-    SECRET_KEY
-except NameError:
-    SECRET_FILE = os.path.join(PROJECT_ROOT, 'secret.txt')
-    try:
-        SECRET_KEY = open(SECRET_FILE).read().strip()
-    except IOError:
-        try:
-            from random import choice
-            SECRET_KEY = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
-            secret = file(SECRET_FILE, 'w')
-            secret.write(SECRET_KEY)
-            secret.close()
-        except IOError:
-            Exception('Please create a %s file with random characters to generate your secret key!' % SECRET_FILE)
-
-
+SECRET_KEY = 'al^^tr$hl&bpucj1f3k3ex3s_ld+_)=dkeet=^+bgugd2^$gac'
 
 # Override the server-derived value of SCRIPT_NAME 
 # See http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges#lighttpdfastcgiandothers
 FORCE_SCRIPT_NAME = ''
 
-
-
-# SOUTH
-
-SOUTH_AUTO_FREEZE_APP = True
-
-
-
 # DJANGO-CSS
-
 COMPRESS = True
 COMPILER_FORMATS = {
     '.sass': {
@@ -172,10 +118,7 @@ COMPILER_FORMATS = {
 }
 COMPRESS_OUTPUT_DIR = 'compressed'
 
-
-
 # DJANGO-CMS
-
 CMS_TEMPLATES = (
         ('default.html', _('default')),
 )
@@ -189,10 +132,7 @@ CMS_REDIRECTS = False
 CMS_SEO_FIELDS = False
 CMS_SOFTROOT = False
 
-
-
 # TINYMCE
-
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "paste",
     'theme': "advanced",
@@ -208,24 +148,15 @@ TINYMCE_DEFAULT_CONFIG = {
     'content_css': MEDIA_URL + 'css/screen.css',
 }
 
-
-
 # SORL THUMBNAIL
-
 THUMBNAIL_QUALITY = 75
 
-
-
 # ISSUU
-
 ISSUU_API_KEY = 'qmym5codqqfmyygnbke1l5ekesglow8b'
 ISSUU_API_SECRET = 'pngwenubvboo6nfeucfzly36z94st8wg'
 
-
-
 # LOCAL SETTINGS
-
 try:
-    execfile(os.path.join(os.path.dirname(__file__), "settings_local.py"))
-except IOError:
+    from settings_local import *
+except ImportError:
     pass
