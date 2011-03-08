@@ -41,11 +41,16 @@ USE_I18N = True
 
 # URLS
 SITE_ID = 1
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, '..', 'media')
 MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/admin-media/'
+STATIC_URL = '/static/'
+STATIC_ROOT = ''
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, '..', 'static'),
+    ('cms', '/Users/pb/.virtualenvs/multimediainkasso/src/cms/cms/media/cms'),
+)
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 ROOT_URLCONF = '%s.urls' % PROJECT_NAME
-# PREPEND_WWW = True
 
 # APPS, MIDDLEWARES, CONTEXT PROCESSORS
 INSTALLED_APPS = (
@@ -59,6 +64,7 @@ INSTALLED_APPS = (
     'reversion',
     'easy_thumbnails',
     'tinymce',
+    'staticfiles',
     
     'cms',
     'cms.plugins.text',
@@ -89,6 +95,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'cms.context_processors.media',
+    'staticfiles.context_processors.static',
 )
 
 # TEMPLATE LOADING
@@ -110,13 +117,9 @@ FORCE_SCRIPT_NAME = ''
 
 # DJANGO-CSS
 COMPRESS = True
-COMPILER_FORMATS = {
-    '.sass': {
-        'binary_path': 'sass -t compressed',
-        'arguments': '*.sass *.css',
-    }
-}
 COMPRESS_OUTPUT_DIR = 'compressed'
+COMPRESS_ROOT = os.path.join(PROJECT_ROOT, '..', 'static')
+COMPRESS_URL = '/static/'
 
 # DJANGO-CMS
 CMS_TEMPLATES = (

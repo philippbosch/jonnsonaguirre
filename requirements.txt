@@ -7,4 +7,5 @@ BeautifulSoup
 django-cms
 django-reversion
 easy_thumbnails
+django-staticfiles
 -e svn+http://django-tinymce.googlecode.com/svn/trunk@98#egg=django_tinymce-trunk-py2.6-dev_r98
