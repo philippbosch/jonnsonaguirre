@@ -51,6 +51,11 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, '..', 'static'),
     ('cms', '/Users/pb/.virtualenvs/multimediainkasso/src/cms/cms/media/cms'),
 )
+STATICFILES_FINDERS = (
+    "staticfiles.finders.FileSystemFinder",
+    "staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+)
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 ROOT_URLCONF = '%s.urls' % PROJECT_NAME
 
